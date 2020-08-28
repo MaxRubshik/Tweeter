@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Map;
@@ -26,10 +27,20 @@ public class GreetingController {
     }
 
     @GetMapping
-    public String main(Map<String, Object> model){
+    public String main(Map<String, Object> model) {
         Iterable<Message> messages = messageRepo.findAll();
-
         model.put("messages", messages);
         return "main";
+    }
+
+    @PostMapping
+    public String add(@RequestParam String text, @RequestParam String tag,
+                      Map<String, Object> model) {
+        Message message = new Message(text, tag);
+        messageRepo.save(message); //1st we save
+
+        Iterable<Message> messages = messageRepo.findAll();
+        model.put("messages", messages);
+        return "main"; //2nd we took from repo. put in model and returned to user
     }
 }
