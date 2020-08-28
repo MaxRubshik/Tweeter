@@ -10,7 +10,7 @@ public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    private String rext;
+    private String text;
     private String tag;
 
     public Integer getId() {
@@ -21,12 +21,12 @@ public class Message {
         this.id = id;
     }
 
-    public String getRext() {
-        return rext;
+    public String getText() {
+        return text;
     }
 
-    public void setRext(String rext) {
-        this.rext = rext;
+    public void setText(String rext) {
+        this.text = rext;
     }
 
     public String getTag() {
