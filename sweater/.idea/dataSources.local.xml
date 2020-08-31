@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="postgres@localhost" uuid="a7836199-4248-477c-affd-cdec3dc81424">
+    <data-source name="sweater@localhost" uuid="a7836199-4248-477c-affd-cdec3dc81424">
       <database-info product="PostgreSQL" version="10.13" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.5">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
